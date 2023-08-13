@@ -68,6 +68,7 @@
       gimp
       calibre
       # Utilities
+      motrix # Download manager
       gnome.gnome-calculator
       gnome.gnome-system-monitor
       gnome.gnome-sound-recorder

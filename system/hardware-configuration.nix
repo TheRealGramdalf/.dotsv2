@@ -13,40 +13,39 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices."enc_root".device = "/dev/disk/by-uuid/635e159a-e37e-44fc-9a79-942be411963d";
-  boot.initrd.luks.devices."enc_home".device = "/dev/disk/by-uuid/df613695-9423-4abf-bfab-8b90974b9c43";
+  boot.initrd.luks.devices."enc_rootfs".device = "/dev/disk/by-uuid/df613695-9423-4abf-bfab-8b90974b9c43";
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c5169903-52e4-4985-9a26-e99ed1eee11c";
+    { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
       options = [ "subvol=nix_root" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/de44b5a9-caef-40c5-88cc-3340faa7d3a1";
+    { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
       options = [ "subvol=nix_home" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/c5169903-52e4-4985-9a26-e99ed1eee11c";
+    { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
       options = [ "subvol=nix_var" ];
     };
-
+/*
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/c5169903-52e4-4985-9a26-e99ed1eee11c";
+    { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
       options = [ "subvol=nix_persist" ];
     };
-
+*/
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3A18-F4B9";
+    { device = "/dev/disk/by-label/NIX_BOOTFS";
       fsType = "vfat";
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/c5169903-52e4-4985-9a26-e99ed1eee11c";
+    { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
       options = [ "subvol=nix_store" ];
     };
