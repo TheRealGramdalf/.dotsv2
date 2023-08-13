@@ -39,7 +39,7 @@
       blackbox-terminal
       zsh
       zsh-autosuggestions
-      gnome-terminal
+      gnome.gnome-terminal
       # Communication
       webcord
       electron-mail
