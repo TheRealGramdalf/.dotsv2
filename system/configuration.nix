@@ -9,9 +9,6 @@
   boot = {
     plymouth.enable = true;
     tmp.cleanOnBoot = true;
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-    supportedFilesystems = [ "zfs" ];
-    zfs.forceImportRoot = false;
     loader = {
       systemd-boot.enable = true;
     };
@@ -45,7 +42,7 @@
   };
   
   system = {
-    stateVersion = "unstable";
+    stateVersion = "nixos-unstable";
     
     autoUpgrade = {
       enable = false;
@@ -92,7 +89,7 @@
   };
   
   i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "Africa/Douala";
+  time.timeZone = "America/Vancouver";
 
   networking = {
     hostName = "aerwiar";
@@ -175,7 +172,7 @@
     users.gramdalf = {
       isNormalUser = true;
       description = "Gramdalf";
-      extraGroups = [ "wheel" "networkmanager" "docker"];
+      extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
       passwordFile = "/etc/passwdfile.gramdalf";
       
       packages = with pkgs; [

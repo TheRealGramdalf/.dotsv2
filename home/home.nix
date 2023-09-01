@@ -24,6 +24,8 @@
       speedtest = "speedtest-cli";
       provides = "nix-locate -w";
       isfs = "dir=$1 sudo mkdir -p /tmp/isfs && sudo mount $dir /tmp/isfs && sudo tree -d 2 /tmp/isfs | tr -d '/tmp/isfs' && sudo umount $dir";
+      mv = "mv -n";
+      "mkfs.ntfs" = "mkfs.ntfs --quick";
     };
     
     sessionVariables = {
@@ -68,6 +70,7 @@
       gimp
       calibre
       # Utilities
+      filezilla
       motrix # Download manager
       gnome.gnome-calculator
       gnome.gnome-system-monitor
@@ -83,7 +86,7 @@
       clapper # Video viewer
       gnome.eog # Photo viewer
       gnome.gnome-power-manager # Battery stats
-      textpieces # Manipulate text without random websites
+      # textpieces # Manipulate text without random websites
       dialect # Translate app
       iotas # MD notes app
       drawing
@@ -99,6 +102,7 @@
       gnome.gnome-font-viewer
       obs-studio
       # Partition tools
+      testdisk
       gparted
       rpi-imager
       # Settings
@@ -122,6 +126,7 @@
       qgnomeplatform
       qgnomeplatform-qt6
       gradience
+      adw-gtk3
       #### CLI ####
       cmatrix
       android-tools
@@ -160,10 +165,10 @@
       supergfxctl
       # Gnome Extensions
       gnomeExtensions.supergfxctl-gex
-      gnomeExtensions.pop-shell
       gnomeExtensions.vitals
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
+      gnomeExtensions.forge
       #gnomeExtensions.ddterm
       # ddterm dependencies
       gjs
@@ -257,7 +262,7 @@
         "disabled"
       ];
       enabled-extensions = [
-        "pop-shell@system76.com"
+        "forge@jmmaranan.com"
         "Vitals@CoreCoding.com"
         "drive-menu@gnome-shell-extensions.gcampax.github.com"
         "ddterm@amezin.github.com"

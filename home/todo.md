@@ -43,3 +43,6 @@
 - [ ] strings
 - [ ] ADB bug report: adb --help displays `install [-lrtsdg]` but does not explain `-s` or `-l`
 - [ ] exfatprogs
+- [ ] login manager 
+- [ ] rounded window corners
+- [ ] borgmatic?
