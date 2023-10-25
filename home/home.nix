@@ -288,22 +288,6 @@
       sort-directories-first = true;
       show-delete-permanently = true;
     };
-    /*
-    /org/gnome/shell/extensions/just-perfection/activities-button
-  false
-
-/org/gnome/shell/extensions/just-perfection/app-menu
-  false
-
-/org/gnome/shell/extensions/just-perfection/dash
-  false
-
-/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show
-  true
-
-/org/gnome/shell/extensions/just-perfection/startup-status
-  0
-  */
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
     };
@@ -327,10 +311,22 @@
     };
     "org/gnome/shell/extensions/vitals" = {
         show-battery = true;
-        hot-sensors = ["_memory_usage_" "_processor_usage_" "_battery_state_" "_battery_rate_"];
+        hot-sensors = [
+          "_memory_usage_"
+          "_processor_usage_"
+          "_battery_state_"
+          "_battery_rate_"
+        ];
       };
     "org/gnome/shell/extensions/espresso" = {
       show-notifications = false;
     }; 
+    "org/gnome/shell/extensions/just-perfection" = {
+      app-menu = false;
+      activities-button = false;
+      dash = false;
+      workspace-switcher-should-show = true;
+      startup-status = 0;
+    };
   };
 }
