@@ -78,10 +78,13 @@
 
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
-  
     config = {
       allowUnfree = true;
-    
+/*
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "zoom"
+           ];
+*/  
       packageOverrides = in_pkgs : {
         linuxPackages = in_pkgs.linuxPackages_latest;
       };
@@ -89,7 +92,7 @@
   };
   
   i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "America/Vancouver";
+#  time.timeZone = "America/Vancouver";
 
   networking = {
     hostName = "aerwiar";
@@ -159,11 +162,12 @@
 
     gnome.excludePackages = with pkgs; [
       gnome-tour
+      gnome.gnome-shell-extensions
     ];
   };
   
   # Docker
-  virtualisation.docker.enable = false;
+  virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
 
   users = {
@@ -173,7 +177,7 @@
       isNormalUser = true;
       description = "Gramdalf";
       extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
-      passwordFile = "/etc/passwdfile.gramdalf";
+      hashedPasswordFile = "/etc/passwdfile.gramdalf";
       
       packages = with pkgs; [
         home-manager

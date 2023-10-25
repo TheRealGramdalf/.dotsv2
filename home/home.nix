@@ -7,7 +7,16 @@
     username = "gramdalf";
     homeDirectory = "/home/gramdalf";
     stateVersion = "23.05";
-    
+    # Custom txt files (Source: https://github.com/nix-community/home-manager/issues/1493)
+    file = {
+    # Kanidm client config
+    ".config/kanidm".text = ''
+      uri = "https://auth.aer.dedyn.io"
+      verify_ca = true
+      verify_hostnames = true
+    '';
+    ".icons/SpaceKCursors".source = ./assets/SpaceKCursors;
+    };
     shellAliases = {
       lla = "ls -la";
       scf = "sudo nano ~/nix/system/configuration.nix &&
@@ -26,6 +35,7 @@
       isfs = "dir=$1 sudo mkdir -p /tmp/isfs && sudo mount $dir /tmp/isfs && sudo tree -d 2 /tmp/isfs | tr -d '/tmp/isfs' && sudo umount $dir";
       mv = "mv -n";
       "mkfs.ntfs" = "mkfs.ntfs --quick";
+      word2md = "pandoc -f docx -t commonmark $1 -o $2";
     };
     
     sessionVariables = {
@@ -46,13 +56,14 @@
       webcord
       electron-mail
       jitsi
-      zoom
+      zoom-us
       chatterino2
       # Word Processing
       libreoffice
       onlyoffice-bin # For improved compatibility over libreoffice
       vscodium
       obsidian
+      pandoc
       # Services
       bitwarden
       denaro
@@ -70,6 +81,7 @@
       gimp
       calibre
       # Utilities
+      prusa-slicer
       filezilla
       motrix # Download manager
       gnome.gnome-calculator
@@ -101,6 +113,7 @@
       gnome-secrets
       gnome.gnome-font-viewer
       obs-studio
+      tauon
       # Partition tools
       testdisk
       gparted
@@ -128,6 +141,8 @@
       gradience
       adw-gtk3
       #### CLI ####
+      kanidm # Kanidm client
+      nix-output-monitor
       cmatrix
       android-tools
       speedtest-cli
@@ -153,10 +168,12 @@
       nmap
       arp-scan
       tree
+      dig
+      cadaver
       #### Libraries/Drivers ####
       # Misc
       libva-utils
-      ntfs3g
+      # ntfs3g - Not needed since 5.15?
       # Fonts
       andika
       # Asus ROG drivers
@@ -169,10 +186,10 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      #gnomeExtensions.ddterm
+      gnomeExtensions.ddterm # Won't work until nixos builds v45, defaults to v43 (latest)
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.just-perfection
       # ddterm dependencies
-      gjs
-      vte
     ];
   };
   # VScodium configuration
@@ -223,11 +240,17 @@
   };
   
   dconf.settings = {
+    "com/github/amezin/ddterm" = {
+      hide-window-on-esc = true;
+      ddterm-toggle-hotkey = ["F1"];
+      panel-icon-type = "none";
+      background-opacity = "0.7";
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       gtk-theme = lib.mkForce "adw-gtk3-dark";
       enable-hot-corners = false;
-      gtk-enable-primary-paste = "false";
+      gtk-enable-primary-paste = false;
       clock-format = "12h";
     };
     "org/gnome/mutter" = {
@@ -238,6 +261,21 @@
       switch-applications-backward = ["disabled"];
       switch-windows = ["<Alt>Tab"];
       switch-windows-backward = ["<Shift><Alt>Tab"];
+    };
+    "org/gnome/destop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///home/gramdalf/.local/share/backgrounds/2023-09-28-14-40-30-Dragon%20Prince.jpg";
+      picture-uri-dark = "file:///home/gramdalf/.local/share/backgrounds/2023-09-28-14-40-30-Dragon%20Prince.jpg";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///home/gramdalf/.local/share/backgrounds/2023-09-28-14-40-30-Dragon%20Prince.jpg";
+      primary-color = "#000000000000";
+      secondary-color ="#000000000000";
     };
     "org/gtk/gtk4/settings/file-chooser" = {
       sort-directories-first = true;
@@ -251,10 +289,24 @@
       show-delete-permanently = true;
     };
     /*
+    /org/gnome/shell/extensions/just-perfection/activities-button
+  false
+
+/org/gnome/shell/extensions/just-perfection/app-menu
+  false
+
+/org/gnome/shell/extensions/just-perfection/dash
+  false
+
+/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show
+  true
+
+/org/gnome/shell/extensions/just-perfection/startup-status
+  0
+  */
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
     };
-    */
     # Extensions
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -268,16 +320,15 @@
         "ddterm@amezin.github.com"
         "supergfxctl-gex@asus-linux.org"
         "espresso@coadmunkee.github.com"
+        "ddterm@amezin.github.com"
+        "blur-my-shell@aunetx"
+        "just-perfection-desktop@just-perfection"
       ];
     };
-    /*
-    "org/gnome/shell/extensions" = {
-      vitals = {
-        #show-battery = true;
-        #hot-sensors = ["'_memory_usage_', '_processor_usage_', '_battery_state_', '_battery_rate_'"];
+    "org/gnome/shell/extensions/vitals" = {
+        show-battery = true;
+        hot-sensors = ["_memory_usage_" "_processor_usage_" "_battery_state_" "_battery_rate_"];
       };
-    };
-    */
     "org/gnome/shell/extensions/espresso" = {
       show-notifications = false;
     }; 

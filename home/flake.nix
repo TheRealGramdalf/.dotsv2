@@ -16,6 +16,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       config = { allowUnfree = true; };
+      assets = import ./assets;
     in {
       homeConfigurations."gramdalf" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
