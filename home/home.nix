@@ -247,6 +247,7 @@
       background-opacity = "0.7";
     };
     "org/gnome/desktop/interface" = {
+      cursor-theme = "SpaceKCursors";
       color-scheme = "prefer-dark";
       gtk-theme = lib.mkForce "adw-gtk3-dark";
       enable-hot-corners = false;
