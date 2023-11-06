@@ -128,7 +128,7 @@
       epiphany
       qbittorrent
       # Hypervisors
-      bottles      
+      #bottles - Opted for flathub version instead      
       # Games
       prismlauncher
       steam
@@ -142,6 +142,7 @@
       adw-gtk3
       #### CLI ####
       kanidm # Kanidm client
+      exiftool
       nix-output-monitor
       cmatrix
       android-tools
