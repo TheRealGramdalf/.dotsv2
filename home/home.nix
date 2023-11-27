@@ -188,7 +188,7 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      gnomeExtensions.ddterm # Won't work until nixos builds v45, defaults to v43 (latest)
+      #gnomeExtensions.ddterm # Won't work until nixos builds v45, defaults to v43 (latest)
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
       # ddterm dependencies
