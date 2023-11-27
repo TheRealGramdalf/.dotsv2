@@ -5,7 +5,6 @@
  
 {
   imports = [  ];
-  
   boot = {
     plymouth.enable = true;
     tmp.cleanOnBoot = true;
@@ -13,7 +12,7 @@
       systemd-boot.enable = true;
     };
   };
-
+  zramSwap.enable = true;
   hardware = {    
     pulseaudio.enable = false;
     

@@ -127,6 +127,7 @@
       brave
       epiphany
       qbittorrent
+      tor-browser
       # Hypervisors
       #bottles - Opted for flathub version instead      
       # Games
