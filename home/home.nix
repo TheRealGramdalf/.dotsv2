@@ -188,15 +188,17 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      #gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
+      gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
       # See https://discord.com/channels/568306982717751326/1178785032383504384
-      (pkgs.gnomeExtensions.ddterm.overrideAttrs {
-        postFixup = ''
-          wrapGApp "$out/share/gnome-shell/extensions/ddterm@amezin.github.com/bin/com.github.amezin.ddterm"
-        '';
-      })
+      #(pkgs.gnomeExtensions.ddterm.overrideAttrs {
+      #  postFixup = ''
+      #    wrapGApp "$out/share/gnome-shell/extensions/ddterm@amezin.github.com/bin/com.github.amezin.ddterm"
+      #  '';
+      #})
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
+      # gnomeExtensions.noannoyance-fork  # To add
+      # gnomeExtensions.zen  # To add?
     ];
   };
   # VScodium configuration
