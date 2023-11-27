@@ -188,7 +188,7 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      gnomeExtensions.ddterm # Won't work until nixos builds v45, defaults to v43 (latest)
+      #gnomeExtensions.ddterm # Won't work until nixos builds v45, defaults to v43 (latest)
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
       # ddterm dependencies
@@ -326,7 +326,7 @@
     }; 
     "org/gnome/shell/extensions/just-perfection" = {
       app-menu = false;
-      activities-button = false;
+      activities-button = true;
       dash = false;
       workspace-switcher-should-show = true;
       startup-status = 0;
