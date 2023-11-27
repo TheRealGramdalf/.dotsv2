@@ -13,7 +13,10 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices."enc_rootfs".device = "/dev/disk/by-uuid/df613695-9423-4abf-bfab-8b90974b9c43";
+  boot.initrd.luks.devices."enc_rootfs" = {
+    device = "/dev/disk/by-uuid/df613695-9423-4abf-bfab-8b90974b9c43";
+    bypassWorkqueues = true;
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/nix_rootfs";
