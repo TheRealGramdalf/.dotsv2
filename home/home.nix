@@ -188,7 +188,7 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
+      #gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
       (pkgs.gnomeExtensions.ddterm.overrideAttrs {
         buildInputs = [ vte gjs ];
       })
