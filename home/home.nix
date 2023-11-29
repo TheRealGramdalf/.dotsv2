@@ -189,6 +189,9 @@
       gnomeExtensions.espresso
       gnomeExtensions.forge
       gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
+      (pkgs.gnomeExtensions.ddterm.overrideAttrs {
+        buildInputs = [ vte gjs ];
+      })
       #See https://discord.com/channels/568306982717751326/1178785032383504384
       #(pkgs.gnomeExtensions.ddterm.overrideAttrs {
       #  postFixup = ''
