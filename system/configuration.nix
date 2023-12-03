@@ -79,11 +79,6 @@
     hostPlatform = lib.mkDefault "x86_64-linux";
     config = {
       allowUnfree = true;
-/*
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-             "zoom"
-           ];
-*/  
       packageOverrides = in_pkgs : {
         linuxPackages = in_pkgs.linuxPackages_latest;
       };
