@@ -105,8 +105,6 @@
       logRefusedConnections = true;
     };
   };
-  # Temporary patch for supergfxd. Will be merged in a future release.
-  systemd.services.supergfxd.path = [ pkgs.pciutils ];
   services = {
     fwupd.enable = true;
     thermald.enable = true;
