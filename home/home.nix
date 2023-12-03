@@ -188,22 +188,7 @@
       gnomeExtensions.removable-drive-menu
       gnomeExtensions.espresso
       gnomeExtensions.forge
-      gnomeExtensions.ddterm   # Waiting for change from `master` to be merged to `unstable`
-      #(pkgs.gnomeExtensions.ddterm.overrideAttrs {
-      #  buildInputs = [ vte ];
-      #      postPatch = ''
-      #        for file in *.js com.github.amezin.ddterm; do
-      #          substituteInPlace $file --replace "gjs" "${gjs}/bin/gjs"
-      #        done
-      #      '';
-      #      # substituteInPlace $file --replace "zenity" "${gnome.zenity}/bin/zenity"
-      #})
-      #See https://discord.com/channels/568306982717751326/1178785032383504384
-      #(pkgs.gnomeExtensions.ddterm.overrideAttrs {
-      #  postFixup = ''
-      #    wrapGApp "$out/share/gnome-shell/extensions/ddterm@amezin.github.com/bin/com.github.amezin.ddterm"
-      #  '';
-      #})
+      gnomeExtensions.ddterm
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
       # gnomeExtensions.noannoyance-fork  # To add
