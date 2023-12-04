@@ -13,11 +13,13 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+# `partlabel` refers to partition name, which is accessible when LUKS is encrypted
   boot.initrd.luks.devices."enc_rootfs" = {
-    device = "/dev/disk/by-uuid/df613695-9423-4abf-bfab-8b90974b9c43";
+    device = "/dev/disk/by-partlabel/aer_data";
     bypassWorkqueues = true;
   };
 
+# `label` refers to partition label, which is only available after LUKS has been unlocked
   fileSystems."/" =
     { device = "/dev/disk/by-label/nix_rootfs";
       fsType = "btrfs";
