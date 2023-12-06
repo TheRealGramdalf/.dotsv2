@@ -170,6 +170,7 @@
       description = "Gramdalf";
       extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
       hashedPasswordFile = "/etc/passwdfile.gramdalf";
+      Shell = pkgs.zsh;
       
       packages = with pkgs; [
         home-manager
