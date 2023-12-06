@@ -189,6 +189,7 @@
       gnomeExtensions.espresso
       gnomeExtensions.forge
       gnomeExtensions.ddterm
+      gjs
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
       # gnomeExtensions.noannoyance-fork  # To add
