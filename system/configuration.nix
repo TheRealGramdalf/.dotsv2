@@ -161,7 +161,7 @@
   # Docker
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
-  #programs.zsh.enable = true;
+  programs.zsh.enable = true;
   users = {
     mutableUsers = false;
     
