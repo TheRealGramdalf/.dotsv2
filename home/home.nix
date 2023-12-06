@@ -29,10 +29,10 @@
             git add -A &&
             git commit -m 'Push local changes' &&
             cd $var";
-      srb = "sudo nixos-rebuild switch --flake $SYS_FLAKE";
-      srbb = "sudo nixos-rebuild boot --flake $SYS_FLAKE";
+      srb = "sudo nixos-rebuild switch --flake ~/nix/system#aerwiar";
+      srbb = "sudo nixos-rebuild boot --flake ~/nix/system#aerwiar";
       hcf = "nano ~/nix/home/home.nix && pushd ~/nix && git add -A && git commit -m 'Push local changes' && popd ";
-      hrb = "home-manager switch --flake $USR_FLAKE";
+      hrb = "home-manager switch --flake ~/nix/home#gramdalf";
       gp = "var=$(pwd) && cd ~/nix && git add -A && git commit -m 'Push local repo' && git push && cd $var";
       speedtest = "speedtest-cli";
       provides = "nix-locate -w";
@@ -48,8 +48,6 @@
       MOZ_ENABLE_WAYLAND = "1";
       QT_STYLE_OVERRIDE = "adwaita";
       QT_QPA_PLATFORMTHEME = "gnome";
-      USR_FLAKE="~/nix/home#gramdalf";
-      SYS_FLAKE="~/nix/system#aerwiar";
     };
     packages = with pkgs; [
       #### GUI ####
@@ -271,6 +269,8 @@
         #WORDCHARS = ''${WORDCHARS//\/}'';
         # hide EOL sign ('%')
         PROMPT_EOL_MARK = "";
+        #USR_FLAKE="~/nix/home#gramdalf";
+        #SYS_FLAKE="~/nix/system#aerwiar";
       };
     };
     vscode = {
