@@ -337,7 +337,7 @@
       # Color profile. To migrate to a gnome-terminal profile, see: 
       #  https://mynixos.com/home-manager/options/programs.gnome-terminal.profile.%3Cname%3E
       # Use (FG/BG) colors specified below, not system defaults
-      #use-theme-colors = false;
+      use-theme-colors = false;
       foreground-color = [ "rgb(230,230,230)" ]; # Text color
       background-color = [ "rgb(23,20,33)" ]; # Backdrop color
       background-opacity = 0.9;
