@@ -246,9 +246,12 @@
   dconf.settings = {
     "com/github/amezin/ddterm" = {
       hide-window-on-esc = true;
+      scrollback-unlimited = true;
+      show-scrollbar = false;
+      notebook-border = false;
       ddterm-toggle-hotkey = ["F1"];
       panel-icon-type = "none";
-      background-opacity = "0.7";
+      background-opacity = 0.69999999999999996;
     };
     "org/gnome/desktop/interface" = {
       cursor-theme = "SpaceKCursors";
