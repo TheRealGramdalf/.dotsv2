@@ -264,11 +264,6 @@
         if [ -f /etc/zsh_command_not_found ]; then
             . /etc/zsh_command_not_found
         fi
-        # Misc. config from the kali `.zshrc`
-        TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-        WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
-        # hide EOL sign ('%')
-        PROMPT_EOL_MARK=""
       '';
       sessionVariables = {
         TIMEFMT = "$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'";
