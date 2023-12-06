@@ -248,6 +248,17 @@
         setopt notify              # report the status of background jobs immediately
         setopt numericglobsort     # sort filenames numerically when it makes sense
         setopt promptsubst         # enable command substitution in prompt
+        bindkey ' ' magic-space                           # do history expansion on space
+        bindkey '^U' backward-kill-line                   # ctrl + U
+        bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+        bindkey '^[[3~' delete-char                       # delete
+        bindkey '^[[1;5C' forward-word                    # ctrl + ->
+        bindkey '^[[1;5D' backward-word                   # ctrl + <-
+        bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+        bindkey '^[[6~' end-of-buffer-or-history          # page down
+        bindkey '^[[H' beginning-of-line                  # home
+        bindkey '^[[F' end-of-line                        # end
+        bindkey '^[[Z' undo                               # shift + tab undo last action
         # ~/.zprompt 
         [ -f ~/.zprompt ] && source ~/.zprompt || echo "Error: ~/.zprompt does not exist."
         # ~/.zcolors
@@ -322,7 +333,7 @@
       ddterm-toggle-hotkey = ["F1"];
       panel-icon-type = "none";
       background-opacity = 0.9;
-      palette = ["'rgb(31,34,41)', 'rgb(192,28,40)', 'rgb(54,123,240)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(230,230,230)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)'"];
+      #palette = ["'rgb(31,34,41)', 'rgb(192,28,40)', 'rgb(54,123,240)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(230,230,230)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)'"];
     };
     "org/gnome/desktop/interface" = {
       cursor-theme = "SpaceKCursors";
