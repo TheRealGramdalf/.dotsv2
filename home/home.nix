@@ -339,7 +339,7 @@
       # Use (FG/BG) colors specified below, not system defaults
       use-theme-colors = false;
       foreground-color = "rgb(230,230,230)"; # Text color
-      background-color = "rgb(23,20,33)"; # Backdrop color
+      background-color = "rgb(31,34,41)"; # Backdrop color
       background-opacity = 0.9;
       palette = [
         "rgb(23,20,33)" "rgb(192,28,40)" "rgb(94,189,171)" "rgb(162,115,76)" "rgb(54,123,240)" "rgb(163,71,186)" "rgb(42,161,179)" "rgb(208,207,204)"
