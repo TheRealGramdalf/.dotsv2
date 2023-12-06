@@ -48,9 +48,9 @@
       #### GUI ####
 
       # Shell/terminal
-      blackbox-terminal
       zsh
       zsh-autosuggestions
+      zsh-syntax-highlighting
       gnome.gnome-terminal
       # Communication
       webcord
