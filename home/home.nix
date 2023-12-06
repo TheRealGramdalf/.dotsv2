@@ -25,15 +25,16 @@
             git add -A &&
             git commit -m 'Push local changes' &&
             cd $var";
-      srb = "sudo nixos-rebuild switch --flake ~/nix/system#aerwiar";
-      srbb = "sudo nixos-rebuild boot --flake ~/nix/system#aerwiar";
+      srb = "sudo nixos-rebuild switch --flake $SYS_FLAKE";
+      srbb = "sudo nixos-rebuild boot --flake $SYS_FLAKE";
       hcf = "nano ~/nix/home/home.nix && pushd ~/nix && git add -A && git commit -m 'Push local changes' && popd ";
-      hrb = "home-manager switch --flake ~/nix/home#gramdalf";
+      hrb = "home-manager switch --flake $USR_FLAKE";
       gp = "var=$(pwd) && cd ~/nix && git add -A && git commit -m 'Push local repo' && git push && cd $var";
       speedtest = "speedtest-cli";
       provides = "nix-locate -w";
-      isfs = "dir=$1 sudo mkdir -p /tmp/isfs && sudo mount $dir /tmp/isfs && sudo tree -d 2 /tmp/isfs | tr -d '/tmp/isfs' && sudo umount $dir";
+      # Don't overwrite files with `mv`
       mv = "mv -n";
+      # Don't overwrite the entire disk with 0s when formatting as NTFS
       "mkfs.ntfs" = "mkfs.ntfs --quick";
       word2md = "pandoc -f docx -t commonmark $1 -o $2";
     };
@@ -43,6 +44,8 @@
       MOZ_ENABLE_WAYLAND = "1";
       QT_STYLE_OVERRIDE = "adwaita";
       QT_QPA_PLATFORMTHEME = "gnome";
+      USR_FLAKE="~/nix/home#gramdalf";
+      SYS_FLAKE="~/nix/system#aerwiar"
     };
     packages = with pkgs; [
       #### GUI ####
@@ -195,25 +198,23 @@
       # gnomeExtensions.noannoyance-fork  # To add
       # gnomeExtensions.zen  # To add?
     ];
-  };
-  # VScodium configuration
-  programs.vscode = {
-  enable = true;
-  package = pkgs.vscodium;
-  extensions = with pkgs.vscode-extensions; [
-    # VSCodium Extensions
-    arrterian.nix-env-selector
-    #mkhl.direnv
-    piousdeer.adwaita-theme
-    jnoortheen.nix-ide
-  ];
-};
-  
+  };  
   programs = {
     home-manager.enable = true;
     bash.enable = true;
+    zsh.enable = true;
 
-    
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      extensions = with pkgs.vscode-extensions; [
+        # VSCodium Extensions
+        arrterian.nix-env-selector
+        #mkhl.direnv
+        piousdeer.adwaita-theme
+        jnoortheen.nix-ide
+      ];
+    };
     git = {
       enable = true;
       userEmail = "gramdalftech@gmail.com";
