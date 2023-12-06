@@ -273,6 +273,8 @@
         if [ -f /etc/zsh_command_not_found ]; then
             . /etc/zsh_command_not_found
         fi
+        # Configure the shell prompt
+        configure_prompt
       '';
       sessionVariables = {
         TIMEFMT = "$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'";
