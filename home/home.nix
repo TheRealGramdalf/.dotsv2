@@ -251,7 +251,7 @@
       notebook-border = false;
       ddterm-toggle-hotkey = ["F1"];
       panel-icon-type = "none";
-      background-opacity = 0.69999999999999996;
+      background-opacity = 0.9;
       palette = ["'rgb(31,34,41)', 'rgb(192,28,40)', 'rgb(54,123,240)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(230,230,230)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)'"];
     };
     "org/gnome/desktop/interface" = {
