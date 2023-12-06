@@ -220,7 +220,7 @@
         ignoreDups = true;
         ignoreSpace = true;
         path = "~/.zsh_history";
-        keep = 1000;
+        size = 1000;
         save = 2000;
         #share = true;
       };
