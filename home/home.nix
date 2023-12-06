@@ -45,7 +45,7 @@
       QT_STYLE_OVERRIDE = "adwaita";
       QT_QPA_PLATFORMTHEME = "gnome";
       USR_FLAKE="~/nix/home#gramdalf";
-      SYS_FLAKE="~/nix/system#aerwiar"
+      SYS_FLAKE="~/nix/system#aerwiar";
     };
     packages = with pkgs; [
       #### GUI ####
