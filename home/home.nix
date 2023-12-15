@@ -86,6 +86,7 @@
       gimp
       calibre
       # Utilities
+      wireshark
       prusa-slicer
       filezilla
       motrix # Download manager
