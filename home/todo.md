@@ -1,17 +1,17 @@
 - [X] Add asusctl
 - [ ] vscode customizations
 - [X] password file
-- [ ] zshrc and zsh pkgs from nobara
+- [X] zshrc and zsh pkgs from nobara
 - [X] Move home subvol
 - [ ] Add fonts declaratively
 - [ ] Onlyoffice, libreoffice declarative config
 - [ ] Libreoffice compat changes
-- [ ] ddterm
+- [X] ddterm
 - [ ] Nix offline mode?
 - [ ] vscodium md smart formatting 
 - [ ] Github repo
 - [ ] DGPU always active with 1mb by GNOME
-- [ ] prismlauncher stuck on old version (switch to unstable?)
+- [X] prismlauncher stuck on old version (switch to unstable?)
 - [ ] Unit nvidia-powerd.service not found (enable in nix config?)
 - [ ] NVRM cpuidInfoAMD: Unrecognized AMD processor in cpuidInfoAMD
 - [ ] gkr-pam: unable to locate daemon control file | Gnome keyring - pluggable auth module. Related to gparted?
@@ -22,10 +22,9 @@
              if the --flake option was given. This file may be a sym‐
              link to a flake.nix in an actual flake; thus /etc/nixos
              need not be a flake.
-- [ ] spacek cursors | Use the file symlink option to link from github to ~/.local/share/icons
+- [X] spacek cursors | Use the file symlink option to link from github to ~/.local/share/icons
 - [ ] AATWS
-- [ ] blur my shell
-- [ ] ddterm
+- [X] blur my shell
 - [X] espresso
 - [ ] gnome 4x ui improvements
 - [ ] just perfection
@@ -34,12 +33,13 @@
 - [X] supergfxctl-gex
 - [ ] user themes
 - [X] vitals
-    - [ ] Declarative config
+    - [X] Declarative config
 - [ ] Mouse
     - [ ] MB4,5 DEL
     - [ ] 
-- [ ] (Encryption?) slowing down r/w when under load (writing files etc)
+- [X] (Encryption?) slowing down r/w when under load (writing files etc)
         - Change io scheduler
+        - Fix: https://discord.com/channels/568306982717751326/1178769551777878086
 - [ ] strings
 - [ ] ADB bug report: adb --help displays `install [-lrtsdg]` but does not explain `-s` or `-l`
 - [ ] exfatprogs
