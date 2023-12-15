@@ -41,6 +41,7 @@
   };
   
   system = {
+    # TODO
     stateVersion = "nixos-unstable";
     
     autoUpgrade = {
