@@ -329,7 +329,8 @@
   
   dconf.settings = {
     "com/github/amezin/ddterm" = {
-      hide-window-on-esc = true;
+      # vi/vim requires escape to function
+      hide-window-on-esc = false;
       scrollback-unlimited = true;
       show-scrollbar = false;
       notebook-border = false;
