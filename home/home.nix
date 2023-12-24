@@ -67,7 +67,7 @@
       libreoffice
       onlyoffice-bin # For improved compatibility over libreoffice
       vscodium
-      obsidian
+      #obsidian
       pandoc
       # Services
       bitwarden
