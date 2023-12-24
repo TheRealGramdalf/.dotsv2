@@ -85,6 +85,7 @@
       blender
       gimp
       calibre
+      drawio
       # Utilities
       wireshark
       prusa-slicer
@@ -135,7 +136,7 @@
       qbittorrent
       tor-browser
       # Hypervisors
-      #bottles - Opted for flathub version instead      
+      bottles
       # Games
       prismlauncher
       steam
