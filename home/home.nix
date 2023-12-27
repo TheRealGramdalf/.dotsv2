@@ -1,7 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {  
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
+  nixpkgs.config = {
+    allowUnfreePredicate = (pkg: true);
+    permittedInsecurePackages = [ "electron-25.9.0" ];
+  };
 
   home = {
     username = "gramdalf";
