@@ -91,6 +91,7 @@
       drawio
       # Utilities
       wireshark
+      dive
       prusa-slicer
       filezilla
       motrix # Download manager
