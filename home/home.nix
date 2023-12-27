@@ -67,7 +67,7 @@
       libreoffice
       onlyoffice-bin # For improved compatibility over libreoffice
       vscodium
-      #obsidian
+      obsidian
       pandoc
       # Services
       bitwarden
@@ -121,6 +121,7 @@
       gnome.gnome-font-viewer
       obs-studio
       tauon
+      podman-desktop
       # Partition tools
       testdisk
       gparted
