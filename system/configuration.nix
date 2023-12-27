@@ -161,7 +161,7 @@
   
   # Docker
   virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation.docker.storageDriver = "overlay2";
   programs.zsh.enable = true;
   users = {
     mutableUsers = false;
