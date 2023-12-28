@@ -109,7 +109,7 @@
       clapper # Video viewer
       gnome.eog # Photo viewer
       gnome.gnome-power-manager # Battery stats
-      # textpieces # Manipulate text without random websites
+      textpieces # Manipulate text without random websites
       dialect # Translate app
       iotas # MD notes app
       drawing
