@@ -90,6 +90,8 @@
       calibre
       drawio
       # Utilities
+      btop
+      inkscape
       picard # MusicBrainz Tagger
       wireshark
       dive

@@ -67,6 +67,13 @@
     };
 
     settings = {
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
       auto-optimise-store = true;
       
       experimental-features = [
@@ -163,13 +170,14 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "overlay2";
   programs.zsh.enable = true;
+  programs.wireshark.enable = true;
   users = {
     mutableUsers = false;
     
     users.gramdalf = {
       isNormalUser = true;
       description = "Gramdalf";
-      extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" "wireshark" ];
       hashedPasswordFile = "/etc/passwdfile.gramdalf";
       shell = pkgs.zsh;
       
