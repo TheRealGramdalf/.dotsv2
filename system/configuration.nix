@@ -184,7 +184,8 @@
       packages = with pkgs; [
         home-manager
         git
-        vim
+        neovim
+        nerdfonts
         wget
         curl
      ];

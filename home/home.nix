@@ -56,6 +56,8 @@
       #### GUI ####
 
       # Shell/terminal
+      neovim
+      nerdfonts
       zsh
       zsh-autosuggestions
       zsh-syntax-highlighting
