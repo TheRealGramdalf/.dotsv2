@@ -101,7 +101,7 @@
     hostId = "16a85224";
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
-    nameservers = [ "1.1.1.3, 1.0.0.3" ];
+    nameservers = [ "1.1.1.3" "1.0.0.3" ];
     
     firewall = {
       enable = false;
@@ -133,7 +133,7 @@
     xserver = {
       videoDrivers = [ "nvidia" ];
       enable = true;
-      layout = "us";
+      xkb.layout = "us";
       # libinput.enable = true;
       excludePackages = [ pkgs.xterm ];
       

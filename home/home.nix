@@ -26,6 +26,7 @@
     };
     shellAliases = {
       lla = "ls -la";
+      resu = "sudo !!";
       scf = "sudo nano ~/nix/system/configuration.nix &&
             var=$(pwd) &&
             cd ~/nix &&
@@ -54,7 +55,9 @@
     };
     packages = with pkgs; [
       #### GUI ####
-
+      handbrake
+      appflowy
+      meld
       # Shell/terminal
       neovim
       nerdfonts
@@ -86,7 +89,7 @@
       newsflash # RSS feed reader
       # File editors
       audacity
-      pitivi # Video editor
+      # pitivi # Video editor
       blender
       gimp
       calibre
