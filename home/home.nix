@@ -55,6 +55,7 @@
     };
     packages = with pkgs; [
       #### GUI ####
+      exfatprogs
       handbrake
       appflowy
       meld
