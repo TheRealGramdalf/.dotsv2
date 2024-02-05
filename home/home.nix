@@ -55,6 +55,7 @@
     };
     packages = with pkgs; [
       #### GUI ####
+      btrfs-assistant
       exfatprogs
       handbrake
       appflowy
